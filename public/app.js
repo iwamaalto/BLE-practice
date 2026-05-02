@@ -2,9 +2,9 @@
 
 const COLORS = {
   black: "#111",
-  red: "#e23a3a",
+  ai: "#7c3aed",
 };
-const MARKER_COLOR = "red";
+const AI_PEN = "ai";
 
 const canvas = document.getElementById("board");
 const ctx = canvas.getContext("2d");
@@ -235,7 +235,7 @@ function isClosedLoop(s) {
 
 async function maybeTriggerAI(stroke) {
   if (stroke.eraser) return;
-  if (stroke.colorName !== MARKER_COLOR) return;
+  if (stroke.colorName !== AI_PEN) return;
   if (!isClosedLoop(stroke)) return;
   if (stroke.answeredAt) return;
   stroke.answeredAt = Date.now();

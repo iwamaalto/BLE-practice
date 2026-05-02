@@ -10,8 +10,8 @@ const PUBLIC_DIR = path.resolve(__dirname, "..", "public");
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 const MODEL = process.env.CLAUDE_MODEL || "sonnet";
 const PROMPT_TEXT =
-  "添付画像には赤い線で囲まれた手書きの質問が含まれています。" +
-  "赤い囲みの中の質問を読み取り、簡潔に（1〜3行程度・最大60文字）回答だけを返してください。" +
+  "添付画像には紫色の線でぐるりと囲まれた手書きの質問が含まれています。" +
+  "紫の囲みの中にある質問を読み取り、簡潔に（1〜3行程度・最大60文字）回答だけを返してください。" +
   "前置き・確認・質問の引用は一切不要。回答テキストのみ。";
 
 const app = express();

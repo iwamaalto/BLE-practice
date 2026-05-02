@@ -61,6 +61,9 @@ html, body {
   border-color: #222;
 }
 
+.tool.ai-pen { color: #7c3aed; border-color: #d5c8f5; }
+.tool.ai-pen.active { background: #7c3aed; color: #fff; border-color: #7c3aed; }
+
 .tool.danger { color: #c0392b; }
 .tool.danger.active { background: #c0392b; color: #fff; border-color: #c0392b; }
 
