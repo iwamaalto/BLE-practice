@@ -1,0 +1,112 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #fafaf7;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid #e5e5e0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10;
+  user-select: none;
+  -webkit-user-select: none;
+  padding-top: max(8px, env(safe-area-inset-top));
+}
+
+#toolbar .group {
+  display: flex;
+  gap: 4px;
+  padding: 0 6px;
+  border-right: 1px solid #e5e5e0;
+}
+
+#toolbar .group:last-of-type { border-right: none; }
+
+.tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 12px;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tool.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+.tool.danger { color: #c0392b; }
+.tool.danger.active { background: #c0392b; color: #fff; border-color: #c0392b; }
+
+.swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.spacer { flex: 1; }
+
+.hint {
+  font-size: 12px;
+  color: #888;
+  padding-right: 8px;
+}
+
+#board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+  display: block;
+}
+
+#status {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 10px 14px;
+  background: rgba(20, 20, 20, 0.85);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 13px;
+  z-index: 20;
+  max-width: 70vw;
+}
+
+#status.error { background: rgba(192, 57, 43, 0.92); }
+#status.hidden { display: none; }
+
+@media (max-width: 480px) {
+  .hint { display: none; }
+  .tool { padding: 6px 10px; font-size: 13px; }
+}

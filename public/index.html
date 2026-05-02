@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <title>手書きノート × Claude</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="toolbar">
+      <div class="group">
+        <button class="tool color-btn active" data-color="black" aria-label="黒ペン">
+          <span class="swatch" style="background:#111"></span>黒
+        </button>
+        <button class="tool color-btn" data-color="red" aria-label="赤マーカー (AI)">
+          <span class="swatch" style="background:#e23a3a"></span>赤(AI)
+        </button>
+      </div>
+      <div class="group">
+        <button class="tool width-btn" data-width="2">細</button>
+        <button class="tool width-btn active" data-width="4">中</button>
+        <button class="tool width-btn" data-width="8">太</button>
+      </div>
+      <div class="group">
+        <button class="tool" id="eraser-btn">消しゴム</button>
+        <button class="tool danger" id="clear-btn">クリア</button>
+      </div>
+      <div class="spacer"></div>
+      <div class="hint">赤で質問を囲むと Claude が答えます</div>
+    </div>
+    <canvas id="board"></canvas>
+    <div id="status" class="hidden"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
